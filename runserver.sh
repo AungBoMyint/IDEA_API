@@ -2,4 +2,4 @@ python manage.py collectstatic --no-input
 
 python manage.py migrate
 
-gunicorn --worker-tmp-dir /dev/shm test_learning.wsgi
+gunicorn --worker-tmp-dir /dev/shm test_learning.wsgi:application  

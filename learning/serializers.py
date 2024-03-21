@@ -217,7 +217,8 @@ class EnrollCourseSerializer(serializers.ModelSerializer):
         subscribe_info = serializers.SerializerMethodField(method_name="get_subscription_info")
        
         def get_subscription_info(self, course):
-            subscribed_course = course.enroll_students.filter(course_id=course.id)
+            user_id = self.context.get('user_id')
+            subscribed_course = course.enroll_students.filter(course_id=course.id,student_id=user_id)
             subscription_info = {
                 'expiration_date': None,
                 'day_left': None,

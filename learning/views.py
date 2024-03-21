@@ -157,7 +157,7 @@ class AdminEnrollStudentViewSet(ModelViewSet):
             subscribed_count = student_queryset.first().subscribed_count + 1
             student_queryset.update(
                                     subscribed = True,
-                                    expiration_date = timezone.now() + timedelta(days=62),
+                                    expiration_date = timezone.now() + timedelta(days=63),
                                     subscribed_count = subscribed_count
                                 )
         else:
@@ -168,7 +168,7 @@ class AdminEnrollStudentViewSet(ModelViewSet):
                             course_id = course,
                             student_id = student,
                             subscribed = True,
-                            expiration_date = timezone.now() + timedelta(days=62)
+                            expiration_date = timezone.now() + timedelta(days=63)
                         )
         
         return Response(data="Success",status=status.HTTP_200_OK)
@@ -375,7 +375,7 @@ class EnrollmentViewSet(CreateModelMixin,UpdateModelMixin,GenericViewSet,Retriev
                     subscribed_count = student_queryset.first().subscribed_count + 1
                     student_queryset.update(
                                             subscribed = True,
-                                            expiration_date = timezone.now() + timedelta(days=62),
+                                            expiration_date = timezone.now() + timedelta(days=63),
                                             subscribed_count = subscribed_count
                                         )
                 else:
@@ -386,7 +386,7 @@ class EnrollmentViewSet(CreateModelMixin,UpdateModelMixin,GenericViewSet,Retriev
                                     course_id = course_id,
                                     student_id = request.user.student.id,
                                     subscribed = True,
-                                    expiration_date = timezone.now() + timedelta(days=62)
+                                    expiration_date = timezone.now() + timedelta(days=63)
                                 )
             courses = models.Course.objects.filter(id__in=enroll_students).values("title")
             enrollment_signal.send_robust(self.__class__,data={

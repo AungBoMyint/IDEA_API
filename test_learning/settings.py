@@ -218,10 +218,10 @@ CACHES = {
 }
 
 
-AWS_ACCESS_KEY_ID = 'DO00WGQZGGRM2MLDBUQU'
-AWS_SECRET_ACCESS_KEY = 'NyvFsXju2WoeLmspMaVQyS7uEilB1EK+tFAK7PeRAUk'
+AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = 'api-media'
-AWS_S3_ENDPOINT_URL = 'https://learn-ease.sgp1.digitaloceanspaces.com'
+AWS_S3_ENDPOINT_URL = env('AWS_S3_ENDPOINT_URL')
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
 }
@@ -240,7 +240,7 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587 
 EMAIL_HOST_USER = 'truelife787799@gmail.com'
-EMAIL_HOST_PASSWORD = 'rwsbdouaexkfdsqu'
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'truelife787799@gmail.com'
 #EMAIL_PORT = 2525

@@ -41,7 +41,8 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     '10.0.2.2',
     'kznidea.online',
-    'idea-api-gzdcu.ondigitalocean.app',
+    'idea-app-lgtz9.ondigitalocean.app',
+    #'idea-api-gzdcu.ondigitalocean.app',
     #'139.59.99.129'
 ]
 
